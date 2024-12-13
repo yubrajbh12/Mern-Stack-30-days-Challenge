@@ -85,3 +85,108 @@
 //         Uploader.emit('uploadComplete')
 //     }
 // }, 1000)
+
+
+// const EventEmitter = require('events');
+// const Orderreceiver = new EventEmitter;
+
+
+
+// console.log("The Order bell just rang so the order is on it's way to here on the system.")
+
+// Orderreceiver.on("OrderProcessing", () => {
+//     console.log(`The order is ${percent} % downloaded`)
+// })
+// Orderreceiver.on("OrderProcessed", () => {
+//     console.log("We Order has been arrived and has started preparing. ")
+// })
+// setTimeout(()=> {
+//     console.log("The order is ready. ")
+// }, 22000)
+
+
+// let percent = 0;
+// const Interval = setInterval(() =>{
+//     percent += 20;
+//     if(percent <100){
+//         Orderreceiver.emit("OrderProcessing")
+//     }
+//     else{
+//         clearInterval(Interval)
+//         Orderreceiver.emit("OrderProcessed")
+        
+//     }
+// }, 2000)
+
+
+
+// This Section we will be talking about the Readable and Writable Stream in Event Module. 
+
+// At frist, the reaable Stream is used to write data to a destination in chunks rather than loading the entire data into memory. 
+// Key Features are 
+// 1) REadable events which emits events liek data(when a chunk of data is available) and end(when the stream ends)
+// 2) Flowing Mode which automatically reads data as it becomes availabe and emit data events. 
+//  3) Paused Mode where you can manually call .read() to fetch chunks of data. 
+
+// const fs = require("fs");
+
+// const readableStream = fs.createReadStream('path.js', 'utf-8');
+
+// setTimeout(() => {
+//     readableStream.on('data', (chunk) => {
+//     console.log("Chunk Data received.", chunk);
+// })
+// }, 2000);
+// readableStream.on('end', ()=> {
+//     console.log('No more data to read.')
+// })
+
+
+// const fs = require('fs');
+
+// const readableStream = fs.createReadStream('Testing.js', 'utf-8');
+
+// readableStream.on('data', (chunk)=> {
+//     console.log( chunk)
+// })
+// readableStream.on('end' , ()=> {
+//     console.log('all the data has been read already.')
+// })
+
+
+
+
+
+
+
+// This section is for the Writable Stream where we can write and add a new file inside the folder. 
+// const fs = require("fs");
+
+// const writableStream = fs.createWriteStream("Testing.js");
+
+// writableStream.write('console.log("Hello World ")\n');
+// writableStream.write('console.log("This is the first code for the Writable Stream.")\n');
+
+// writableStream.end('console.log("Done Writting.")\n');
+
+// writableStream.on('finish', ()=> {
+//     console.log("All data has been written. ")
+// })
+
+
+
+// const fs = require('fs');
+// const writableStream = fs.createWriteStream('Testing1.js');
+
+// writableStream.write('console.log("Hello World")\n');
+// writableStream.write('console.log("This is a second code for the writable Strem.")\n');
+
+// writableStream.end('console.log("This is a end.")\n');
+// writableStream.on('finish', ()=> {
+//     console.log("all data has been written.")
+// })
+
+
+
+
+
