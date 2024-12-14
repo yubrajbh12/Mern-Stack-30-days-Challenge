@@ -93,3 +93,34 @@
 
 
 
+const http = require('http');
+const fs = require('fs');
+
+const myserver = http.createServer((req, res) => {
+    const log = `${Date.now()}: ${req.url} Request Recived.`
+    fs.appendFile('test.js', log, () => {
+        switch(req.url){
+            case '/': res.write("Home Page.")
+            res.end();
+            break
+            case '/about': res.write("This is a Profile Page.")
+            res.end();
+            break
+            default:  res.write("404 Error Found."
+            )
+            res.end()
+        }
+    })
+
+
+})
+
+myserver.listen(3000, () => 
+{
+    console.log("The server is running smoothly.")
+})
+
+
+
+
+
