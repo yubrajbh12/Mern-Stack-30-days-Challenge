@@ -118,3 +118,46 @@
 // }).listen(port, ()=> {
 //     console.log("The Server is running smoothly.")
 // })
+
+
+// Let's work on couple more examples 
+
+
+// const http = require('http');
+// const fs = require('fs');
+
+// const user = [
+//     {id: 1, name: "Yubraj Bhandari", email: "yubrajbh12@gmail.com", PhoneNumber: +2522667314}, 
+//     {id: 2, name:"Ashiya Shrestha", email: "acyashrestha02@gmail.com", PhoneNumber: +1404506743}, 
+//     {id:3, name: "Bishnu Bhandari", email: "bhandaribishnu409@gmail.com", PhoneNumber: +9779867059181}, 
+
+// ]
+
+// http.createServer((req, res) => {
+
+//     const log = `${Date.now() }${req.url}: Request Received`
+
+//     if(req.method === "GET" && req.url === '/home'){
+//         res.writeHead(200, {"Content-Type": 'application/json'});
+//         fs.appendFile('Test#2.js', log,(err, data)=> {
+//             console.log('Error writing to log file: ', err)
+
+//         });
+//         res.end(JSON.stringify(user))
+//     }
+//     else {
+//         res.writeHead(404, {'Content-Type': "text/plain"})
+//         res.end('Error Found.Please Try again later.')
+//     }
+
+
+
+
+// }).listen(5001, ()=> {
+//     console.log('The Server is running Smoothly.')
+// })
+
+
+
+
+
